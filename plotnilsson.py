@@ -15,15 +15,6 @@ def load_DF(filename):
     df = pd.read_csv(filename, compression = 'zip')
     return df
 
-def write_to_DF(inputtype, df, d, En, index, model = 'Nilsson'):
-    if inputtype in df.columns:
-        print(inputtype)
-    else:
-        df.insert(-1, inputtype, index)
-        print(df)
-    sys.exit()
-    return
-
 def parse_WoodsSaxon(resfile):
     df = pd.DataFrame()
     resultfile = open(resfile).read()
@@ -97,7 +88,6 @@ def spaghetti(df):
 df = load_DF('WoodsSaxonDF.zip')
 spaghetti(df)
 
-sys.exit()
 
 WSdf = parse_WoodsSaxon('swbeta.out')
 print(WSdf)
